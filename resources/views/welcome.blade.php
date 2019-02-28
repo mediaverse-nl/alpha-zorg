@@ -1,95 +1,84 @@
-<!DOCTYPE html>
-<html lang="{{ config('app.locale') }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.site')
 
-        <title>Laravel</title>
+@section('content')
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+    <!-- Header -->
+    @include('components.page-banner')
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
+    <section id="projects" class="projects-section bg-light">
+        <div class="container">
 
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @if (Auth::check())
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ url('/login') }}">Login</a>
-                        <a href="{{ url('/register') }}">Register</a>
-                    @endif
+            <!-- Featured Project Row -->
+            <div class="row align-items-center no-gutters mb-4 mb-lg-5">
+                <div class="col-xl-5 col-lg-5">
+                    <img class="img-fluid mb-3 mb-lg-0" src="/storage/pages/wWvvig7PEmeAFDh2hRpIjDXPoUJrAMlNAMle8Jo5.jpeg" alt="">
                 </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
+                <div class="col-xl-7 col-lg-7">
+                    <div class="featured-text text-center text-lg-left">
+                        <h4>Welkom bij Alpha Zorg & Advies</h4>
+                        <p class="text-black-50 mb-0">Alpha Zorg & Advies biedt zorg en advies in de vorm van ambulante begeleiding en woonbegeleiding aan jongeren vanaf 17 jaar, die door gedrags- en/of ontwikkelingsstoornis ondersteuning nodig hebben in hun dagelijks leven. Wij bieden begeleiding in één van onze woningen of in eigen woonomgeving.
+                            Hiernaast bieden wij ook ondersteuning aan ouders omtrent de zorg van hun kind,dit in het kader van de jeugdwet.</p>
+                    </div>
                 </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                <div class="col-xl-12 col-lg-12">
+                    <br>
+                    <br>
+                    <p class="text-black-50 text-center">
+                        Bij ons staat de jongere centraal, want iedereen is uniek en verdient daarom ook een unieke aanpak.
+                        Dit doen we door een begeleidingstraject te bieden waarbij de componenten:
+                        Aandacht, Liefde, Praktiseren, Hervormen en Aansturing een basis zullen vormen.Hierover vertellen wij meer bij het kopje:Organisatie.
+                        Wij stemmen af op uw wensen en de mogelijkheden die wij te bieden hebben. Ieder mens is waardevol en verdient een oprechte en eerlijke kans om te groeien en zich verder te ontplooien.
+                        <br><br>
+                        Als professional staan wij voor u klaar om u te adviseren, ondersteunen en begeleiden naar een leven met perspectief.
+                        <br><br>
+                        <b> Samen staan wij sterk. Een helpende hand richting een betere morgen!</b>
+                    </p>
                 </div>
             </div>
+
+            <!-- Project One Row -->
+            <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
+                <div class="col-lg-6">
+                    <img class="img-fluid" src="/img/demo-image-01.jpg" alt="">
+                </div>
+                <div class="col-lg-6">
+                    <div class="bg-black text-center h-100 project">
+                        <div class="d-flex h-100">
+                            <div class="project-text w-100 my-auto text-center text-lg-left">
+                                <h4 class="text-white">Misty</h4>
+                                <p class="mb-0 text-white-50">An example of where you can put an image of a project, or anything else, along with a description.</p>
+                                <hr class="d-none d-lg-block mb-0 ml-0">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Two Row -->
+            <div class="row justify-content-center no-gutters">
+                <div class="col-lg-6">
+                    <img class="img-fluid" src="img/demo-image-02.jpg" alt="">
+                </div>
+                <div class="col-lg-6 order-lg-first">
+                    <div class="bg-black text-center h-100 project">
+                        <div class="d-flex h-100">
+                            <div class="project-text w-100 my-auto text-center text-lg-right">
+                                <h4 class="text-white">Mountains</h4>
+                                <p class="mb-0 text-white-50">Another example of a project with its respective description. These sections work well responsively as well, try this theme on a small screen!</p>
+                                <hr class="d-none d-lg-block mb-0 mr-0">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
-    </body>
-</html>
+    </section>
+@stop
+
+@push('css')
+    <style>
+
+    </style>
+@endpush
+

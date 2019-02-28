@@ -4,42 +4,19 @@ namespace App\Http\Controllers\Site;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Page;
 
 class PageController extends Controller
 {
-
-    public function guidance()
+    public function show($slug)
     {
-        return view('');
-    }
+        $page = Page::findBySlug($slug);
 
-    public function residential()
-    {
+        if ($page == null){
+            return abort(404);
+        }
 
-    }
-
-    public function advice()
-    {
-
-    }
-
-    public function signup()
-    {
-
-    }
-
-    public function organization()
-    {
-
-    }
-
-    public function whom()
-    {
-
-    }
-
-    public function document()
-    {
-
+        return view('site.page.show')
+            ->with('page', $page);
     }
 }
