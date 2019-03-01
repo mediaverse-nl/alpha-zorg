@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Site;
 
+use App\Page;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -9,6 +10,9 @@ class WelcomeController extends Controller
 {
     function __invoke()
     {
-        return view('welcome');
+        $page = Page::findBySlug('/');
+
+        return view('welcome')
+            ->with('page', $page);
     }
 }

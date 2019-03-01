@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.7.9
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Gegenereerd op: 27 feb 2019 om 17:12
--- Serverversie: 5.7.19
--- PHP-versie: 7.0.23
+-- Gegenereerd op: 01 mrt 2019 om 03:02
+-- Serverversie: 5.7.21
+-- PHP-versie: 5.6.35
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -224,7 +224,7 @@ CREATE TABLE IF NOT EXISTS `menu_items` (
   `parameters` text COLLATE utf8_unicode_ci,
   PRIMARY KEY (`id`),
   KEY `menu_items_menu_id_foreign` (`menu_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `menu_items`
@@ -245,15 +245,17 @@ INSERT INTO `menu_items` (`id`, `menu_id`, `title`, `url`, `target`, `icon_class
 (12, 1, 'Posts', '', '_self', 'voyager-news', NULL, NULL, 6, '2019-02-26 09:41:22', '2019-02-26 09:41:22', 'voyager.posts.index', NULL),
 (13, 1, 'Pages', '', '_self', 'voyager-file-text', NULL, NULL, 7, '2019-02-26 09:41:22', '2019-02-26 09:41:22', 'voyager.pages.index', NULL),
 (14, 1, 'Hooks', '', '_self', 'voyager-hook', NULL, 5, 13, '2019-02-26 09:41:22', '2019-02-26 09:41:22', 'voyager.hooks', NULL),
-(15, 2, 'Contact', '', '_self', NULL, '#000000', NULL, 2, '2019-02-26 10:16:05', '2019-02-27 15:48:35', 'site.contact.index', 'null'),
-(16, 2, 'Home', '', '_self', NULL, '#000000', NULL, 1, '2019-02-26 11:26:59', '2019-02-27 15:48:35', 'site.home', NULL),
-(17, 2, 'Organisatie', '', '_self', NULL, '#000000', NULL, 3, '2019-02-26 12:49:09', '2019-02-27 15:47:50', 'site.organization.organization.index', NULL),
-(18, 2, '/voor-wie', '', '_self', NULL, '#000000', NULL, 4, '2019-02-26 12:50:27', '2019-02-27 15:48:49', 'site.organization.whom.index', 'null'),
-(19, 2, 'Ambulante Begeleiding', '', '_self', NULL, '#000000', NULL, 15, '2019-02-27 15:50:04', '2019-02-27 15:50:04', 'site.service.guidance.index', NULL),
-(20, 2, 'Woonbegeleiding', '', '_self', NULL, '#000000', NULL, 16, '2019-02-27 15:50:36', '2019-02-27 15:50:36', 'site.service.residential.index', NULL),
-(21, 2, 'Thuiszorg en Advies', '', '_self', NULL, '#000000', NULL, 17, '2019-02-27 15:51:14', '2019-02-27 15:51:14', 'site.service.advice.index', NULL),
-(22, 2, 'Aanmelden', '', '_self', NULL, '#000000', NULL, 18, '2019-02-27 15:51:46', '2019-02-27 15:51:46', 'site.service.signup.index', NULL),
-(23, 2, 'Documenten', '', '_self', NULL, '#000000', NULL, 19, '2019-02-27 15:52:28', '2019-02-27 15:52:51', 'site.organization.document.index', 'null');
+(15, 2, 'Contact', 'contact', '_self', NULL, '#000000', NULL, 4, '2019-02-26 10:16:05', '2019-02-28 16:24:22', NULL, ''),
+(16, 2, 'Home', '/', '_self', NULL, '#000000', NULL, 1, '2019-02-26 11:26:59', '2019-02-28 14:24:29', NULL, ''),
+(17, 2, 'Over Ons', '#', '_self', NULL, '#000000', NULL, 2, '2019-02-26 12:49:09', '2019-02-28 23:52:49', NULL, ''),
+(18, 2, 'Voor Wie', 'voor-wie', '_self', NULL, '#000000', 17, 2, '2019-02-26 12:50:27', '2019-02-28 14:36:16', NULL, ''),
+(19, 2, 'Ambulante Begeleiding', 'ambulante-begeleiding', '_self', NULL, '#000000', 24, 2, '2019-02-27 15:50:04', '2019-02-28 14:37:09', NULL, ''),
+(20, 2, 'Woonbegeleiding', 'woonbegeleiding', '_self', NULL, '#000000', 24, 3, '2019-02-27 15:50:36', '2019-02-28 14:37:25', NULL, ''),
+(21, 2, 'Thuiszorg en Advies', 'thuiszorg-en-advies', '_self', NULL, '#000000', 24, 4, '2019-02-27 15:51:14', '2019-02-28 14:37:44', NULL, ''),
+(22, 2, 'Aanmelden', 'aanmelden', '_self', NULL, '#000000', 24, 5, '2019-02-27 15:51:46', '2019-02-28 14:37:58', NULL, ''),
+(23, 2, 'Documenten', 'documenten', '_self', NULL, '#000000', 17, 3, '2019-02-27 15:52:28', '2019-02-28 14:36:31', NULL, ''),
+(24, 2, 'Diensten', '#', '_self', NULL, '#000000', NULL, 3, '2019-02-28 14:04:40', '2019-02-28 14:38:11', NULL, ''),
+(25, 2, 'Organisatie', 'organisatie', '_self', NULL, '#000000', 17, 1, '2019-02-28 14:05:24', '2019-02-28 14:36:03', NULL, '');
 
 -- --------------------------------------------------------
 
@@ -323,14 +325,22 @@ CREATE TABLE IF NOT EXISTS `pages` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `pages_slug_unique` (`slug`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `pages`
 --
 
 INSERT INTO `pages` (`id`, `author_id`, `title`, `excerpt`, `body`, `image`, `slug`, `meta_description`, `meta_keywords`, `status`, `created_at`, `updated_at`) VALUES
-(1, 0, 'Hello World', 'Hang the jib grog grog blossom grapple dance the hempen jig gangway pressgang bilge rat to go on account lugger. Nelsons folly gabion line draught scallywag fire ship gaff fluke fathom case shot. Sea Legs bilge rat sloop matey gabion long clothes run a shot across the bow Gold Road cog league.', '<p>Hello World. Scallywag grog swab Cat o\'nine tails scuttle rigging hardtack cable nipper Yellow Jack. Handsomely spirits knave lad killick landlubber or just lubber deadlights chantey pinnace crack Jennys tea cup. Provost long clothes black spot Yellow Jack bilged on her anchor league lateen sail case shot lee tackle.</p>\n<p>Ballast spirits fluke topmast me quarterdeck schooner landlubber or just lubber gabion belaying pin. Pinnace stern galleon starboard warp carouser to go on account dance the hempen jig jolly boat measured fer yer chains. Man-of-war fire in the hole nipperkin handsomely doubloon barkadeer Brethren of the Coast gibbet driver squiffy.</p>', 'pages/page1.jpg', 'hello-world', 'Yar Meta Description', 'Keyword1, Keyword2', 'ACTIVE', '2019-02-26 09:41:22', '2019-02-26 09:41:22');
+(2, 1, 'Organisatie', 'test', '<p><span style=\"box-sizing: border-box; font-weight: bold;\">Alpha Zorg &amp; Advies</span></p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"box-sizing: border-box; font-weight: bold;\">Visie:</span></p>\r\n<p>Wij willen&nbsp;jongeren helpen bij het ontdekken van hun ware identiteit waardoor zij weer het leven in perspectief&nbsp;kunnen zien<br style=\"box-sizing: border-box;\" />en vanuit&nbsp;hun&nbsp;kracht te gaan werken.</p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"box-sizing: border-box; font-weight: bold;\">Missie</span></p>\r\n<p>Het leven in perspectief zien.</p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"box-sizing: border-box; font-weight: bold;\">Hiervoor hanteren wij&nbsp;5 pijlers:</span></p>\r\n<ul>\r\n<li>Aandacht:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Geef aandacht aan jezelf, jouw passie&nbsp;en de wereld om&nbsp;je heen, hierdoor vergroot jouw zelfbeeld.</li>\r\n<li>Liefde:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Leer&nbsp;lief te hebben, door jezelf te&nbsp;accepteren zoals&nbsp;je bent.</li>\r\n<li>Praktijk:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Zet in praktijk dat wat&nbsp;je leert, hierdoor&nbsp;ontwikkelt&nbsp;je een nieuwe houding.</li>\r\n<li>Hervormen:&nbsp;&nbsp;&nbsp; Door&nbsp;je nieuwe&nbsp;denkwijze in praktijk&nbsp;te zetten, ga&nbsp;je jezelf&nbsp;anders opstellen, waardoor jouw&nbsp;levensstijl ook&nbsp;kunt gaan&nbsp;veranderen.</li>\r\n<li>Aansturing:&nbsp;&nbsp;&nbsp;&nbsp; Eenmaal&nbsp;als je&nbsp;nieuw&nbsp;inzicht verkregen hebt, zul&nbsp;je zelfredzaamheid ontwikkelen en&nbsp;nieuwe richting aan&nbsp;je leven geven.</li>\r\n</ul>', 'pages\\February2019\\3prl45erPApPi0zFj4WU.jpg', 'organisatie', 'test', 'test', 'ACTIVE', '2019-02-28 14:18:13', '2019-02-28 23:16:53'),
+(3, 1, 'Contact', 'test tetest', '<p>test&nbsp;</p>', NULL, 'contact', 'test', 'test', 'ACTIVE', '2019-02-28 16:26:47', '2019-02-28 16:26:47'),
+(4, 1, 'Voor wie?', 'test', '<p><span style=\"box-sizing: border-box; font-weight: bold;\">Onze doelgroep</span></p>\r\n<p>Wij bieden begeleiding en zorg aan iedereen vanaf 17 jaar die zelfstandig wil wonen en leven&nbsp;maar vanwege een beperking&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br style=\"box-sizing: border-box;\" />ondersteuning kan gebruiken. Om tot een succesvol traject te komen is het belangrijk dat de jongeren en volwassenen&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br style=\"box-sizing: border-box;\" />gemotiveerd zijn en geholpen willen worden!&nbsp;&nbsp;</p>', 'pages\\March2019\\MXA4cG8wwyJ9hnr9SlLG.png', 'voor-wie', 'test', 'test', 'ACTIVE', '2019-02-28 23:12:32', '2019-03-01 01:03:52'),
+(5, 1, 'Documenten', 'test', '<p>Algemene voorwaarden</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>Privacyreglement</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>Klachtenreglement</p>', NULL, 'documenten', 'test', 'test', 'ACTIVE', '2019-02-28 23:15:47', '2019-02-28 23:15:47'),
+(6, 1, 'Ambulante Begeleiding', 'test', '<p>Met ambulante begeleiding bieden wij begeleiding aan kinderen en volwassenen met gedrags-, ASS, ADHD, ADD, ODD, Pdd-Nos en/of andere licht psychiatrische problematiek. Samen met de client stellen wij een begeleidingsplan op waarin wij de zorgvraag zullen vastleggen,&nbsp;als ook de daarop toegespitste begeleiding en ondersteuning. Aan de hand van&nbsp;de afgesproken aanpak zullen wij de begeleidingstraject starten.</p>', NULL, 'ambulante-begeleiding', 'test', 'test', 'ACTIVE', '2019-02-28 23:23:21', '2019-02-28 23:24:39'),
+(7, 1, 'Woonbegeleiding', 'test', '<p>Wij bieden zorg en begeleiding aan mensen jongeren vanaf 17 jaar. Die geen 24 uur begeleiding meer nodig hebben bij het wonen.&nbsp;De jongere&nbsp;zelfstandig, maar heeft wel een&nbsp;hulpvraag waar hij of zij begeleiding bij nodig heeft. Binnen begeleid wonen hebben de mensen een eigen studio /appartement die&nbsp;zij in mogen richten naar eigen wens. Bij begeleid wonen krijg&nbsp;men een mentor, die de mensen&nbsp;helpt&nbsp;bij de hulpvraag.</p>', NULL, 'woonbegeleiding', 'test', 'test', 'ACTIVE', '2019-02-28 23:30:21', '2019-02-28 23:30:21'),
+(8, 1, 'Thuiszorg en Advies', 'test', '<p>Alpha Zorg biedt Thuiszorg bij u thuis. Als organisatie willen wij het verschil&nbsp;maken door u kwaliteit en aandacht te bieden.<br style=\"box-sizing: border-box;\" />U&nbsp;kunt denken&nbsp;verpleegkundige hulp bij&nbsp;ziekte of verzorging na een ziekenhuisopname. Ook ondersteunen wij u wanneer u moeite krijgt bij het uitvoeren van de dagelijkse huishoudelijke taken.</p>\r\n<p>In de zorg&nbsp;hebben we te maken met verschillende culturen, als organisatie zijn wij gespecialiseerd in het omgaan met de&nbsp;Caribische cultuur.<br style=\"box-sizing: border-box;\" />Wij&nbsp;adviseren organisaties en instellingen die in hun dagelijkse fungeren geconfronteerd worden met identiteitsgebonden problematieken.</p>', NULL, 'thuiszorg-en-advies', 'test', 'test', 'ACTIVE', '2019-02-28 23:31:34', '2019-02-28 23:31:34'),
+(9, 1, 'Aanmelden', 'Aanmelden kunt u zelf doen of door iemand aan ons worden doorverwezen. Na het eerste contact gaan we graag een kennismakingsgesprek met u aan, om na te gaan of onze werkwijze bij u past. Na het ontvangen van u informatie, kunnen wij na gaan of wij u passende zorg kunnen aanbieden. Zijn alle gegevens compleet, dan word je uitgenodigd voor een intake gesprek. Tijdens dit gesprek worden jouw hulpvraag, doelen en wensen besproken en kijken we hoe we jou het beste kunnen ondersteunen.', '<p>&nbsp;</p>\r\n<p><span style=\"box-sizing: border-box; font-weight: bold;\">Voor meer informatie en of vragen? Bel of mail ons dan voor het maken van een afspraak.</span></p>\r\n<p>Alpha Zorg &amp; Advies<br style=\"box-sizing: border-box;\" />Daalakkersweg 2-96<br style=\"box-sizing: border-box;\" />5641 JA Eindhoven</p>\r\n<p>T:+31(06) 48482449</p>\r\n<p>Of mail ons via&nbsp;<a style=\"box-sizing: border-box; background-color: transparent; color: #0fa2d5; text-decoration-line: none; transition: all 0.3s ease-in-out 0s;\" href=\"http://alpha-zorg.nl/contact\">http://alpha-zorg.nl/contact</a></p>', NULL, 'aanmelden', 'test', 'test', 'ACTIVE', '2019-02-28 23:32:28', '2019-02-28 23:34:12'),
+(10, 1, 'Home', 'test', '<p>Alpha Zorg &amp; Advies biedt zorg en advies in de vorm van ambulante begeleiding en woonbegeleiding aan&nbsp;jongeren&nbsp;vanaf 17 jaar, die door&nbsp;gedrags- en/of ontwikkelingsstoornis&nbsp;ondersteuning nodig hebben in hun dagelijks leven. Wij bieden begeleiding in &eacute;&eacute;n van onze woningen of in eigen woonomgeving.<br style=\"box-sizing: border-box;\" />Hiernaast bieden wij ook ondersteuning aan ouders omtrent de zorg van hun kind,dit&nbsp;in het kader van de jeugdwet.</p>\r\n<p>Bij ons staat de&nbsp;jongere centraal, want iedereen&nbsp;is uniek en verdient daarom ook een unieke aanpak.<br style=\"box-sizing: border-box;\" />Dit doen we door een begeleidingstraject te bieden waarbij de&nbsp;componenten:<br style=\"box-sizing: border-box;\" />Aandacht, Liefde, Praktiseren, Hervormen en Aansturing&nbsp;een&nbsp;basis zullen vormen.Hierover vertellen wij meer bij het kopje:Organisatie.<br style=\"box-sizing: border-box;\" />Wij stemmen af op uw wensen en de mogelijkheden die wij te bieden hebben. Ieder mens is waardevol en verdient een oprechte en eerlijke kans om te groeien en zich verder te ontplooien.&nbsp;&nbsp;</p>\r\n<p>Als professional staan wij&nbsp;voor u klaar om u te adviseren, ondersteunen en begeleiden naar een leven&nbsp;met perspectief.</p>\r\n<p><span style=\"box-sizing: border-box; font-weight: bold;\">Samen staan wij sterk. Een helpende hand richting een betere morgen!</span></p>', NULL, '/', 'test', 'test', 'ACTIVE', '2019-03-01 01:10:01', '2019-03-01 01:10:50');
 
 -- --------------------------------------------------------
 
@@ -469,7 +479,8 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (37, 1),
 (38, 1),
 (39, 1),
-(40, 1);
+(40, 1),
+(41, 1);
 
 -- --------------------------------------------------------
 
@@ -551,23 +562,32 @@ CREATE TABLE IF NOT EXISTS `settings` (
   `group` varchar(191) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `settings_key_unique` (`key`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `settings`
 --
 
 INSERT INTO `settings` (`id`, `key`, `display_name`, `value`, `details`, `type`, `order`, `group`) VALUES
-(1, 'site.title', 'Site Title', 'Site Title', '', 'text', 1, 'Site'),
-(2, 'site.description', 'Site Description', 'Site Description', '', 'text', 2, 'Site'),
+(1, 'site.title', 'Site Title', 'Alpha Zorg', '', 'text', 1, 'Site'),
+(2, 'site.description', 'Site Description', NULL, '', 'text', 2, 'Site'),
 (3, 'site.logo', 'Site Logo', '', '', 'image', 3, 'Site'),
-(4, 'site.google_analytics_tracking_id', 'Google Analytics Tracking ID', '', '', 'text', 4, 'Site'),
+(4, 'site.google_analytics_tracking_id', 'Google Analytics Tracking ID', NULL, '', 'text', 4, 'Site'),
 (5, 'admin.bg_image', 'Admin Background Image', '', '', 'image', 5, 'Admin'),
 (6, 'admin.title', 'Admin Title', 'Voyager', '', 'text', 1, 'Admin'),
-(7, 'admin.description', 'Admin Description', 'Welcome to Voyager. The Missing Admin for Laravel', '', 'text', 2, 'Admin'),
-(8, 'admin.loader', 'Admin Loader', '', '', 'image', 3, 'Admin'),
+(7, 'admin.description', 'Admin Description', NULL, '', 'text', 2, 'Admin'),
+(8, 'admin.loader', 'Admin Loader', 'settings\\February2019\\dfjXM6MyRwK4IDIjHHZW.gif', '', 'image', 3, 'Admin'),
 (9, 'admin.icon_image', 'Admin Icon Image', '', '', 'image', 4, 'Admin'),
-(10, 'admin.google_analytics_client_id', 'Google Analytics Client ID (used for admin dashboard)', '', '', 'text', 1, 'Admin');
+(10, 'admin.google_analytics_client_id', 'Google Analytics Client ID (used for admin dashboard)', NULL, '', 'text', 1, 'Admin'),
+(12, 'site.banner', 'Site Banner', 'settings\\March2019\\fAcK4ev3xz9FEnDhJ0td.jpg', NULL, 'image', 6, 'Site'),
+(13, 'site.privacy', 'Privacy Beleid', '', NULL, 'file', 7, 'Site'),
+(14, 'site.terms', 'Algemene Voorwaarden', '', NULL, 'file', 8, 'Site'),
+(16, 'site.adres', 'Site Adres', NULL, NULL, 'text', 9, 'Site'),
+(17, 'site.email', 'Site Email', NULL, NULL, 'text', 10, 'Site'),
+(18, 'site.telefoon', 'Site Telefoon', NULL, NULL, 'text', 11, 'Site'),
+(19, 'site.facebook', 'Site Facebook', NULL, NULL, 'text', 12, 'Site'),
+(20, 'site.twitter', 'Site Twitter', NULL, NULL, 'text', 13, 'Site'),
+(21, 'site.default.image', 'Site Standart Foto', 'settings\\March2019\\r6dJxUGSxGIm3YIA1lkD.jpg', NULL, 'image', 14, 'Site');
 
 -- --------------------------------------------------------
 

@@ -8,9 +8,9 @@
                 <div class="card py-4 h-100">
                     <div class="card-body text-center">
                         <i class="fas fa-map-marked-alt text-primary mb-2"></i>
-                        <h4 class="text-uppercase m-0">Address</h4>
+                        <h4 class="text-uppercase m-0">Adres</h4>
                         <hr class="my-4">
-                        <div class="small text-black-50">4923 Market Street, Orlando FL</div>
+                        <div class="small text-black-50">{!! setting('site.adres') !!}</div>
                     </div>
                 </div>
             </div>
@@ -22,7 +22,7 @@
                         <h4 class="text-uppercase m-0">Email</h4>
                         <hr class="my-4">
                         <div class="small text-black-50">
-                            <a href="#">hello@yourdomain.com</a>
+                            <a href="#">{!! setting('site.email') !!}</a>
                         </div>
                     </div>
                 </div>
@@ -32,23 +32,20 @@
                 <div class="card py-4 h-100">
                     <div class="card-body text-center">
                         <i class="fas fa-mobile-alt text-primary mb-2"></i>
-                        <h4 class="text-uppercase m-0">Phone</h4>
+                        <h4 class="text-uppercase m-0">Telefoon</h4>
                         <hr class="my-4">
-                        <div class="small text-black-50">+1 (555) 902-8832</div>
+                        <div class="small text-black-50">{!! setting('site.telefoon') !!}</div>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="social d-flex justify-content-center">
-            <a href="#" class="mx-2">
+            <a href="{!! setting('site.facebook') !!}" class="mx-2">
                 <i class="fab fa-twitter"></i>
             </a>
-            <a href="#" class="mx-2">
+            <a href="{!! setting('site.twitter') !!}" class="mx-2">
                 <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="#" class="mx-2">
-                <i class="fab fa-github"></i>
             </a>
         </div>
 

@@ -11,7 +11,7 @@
             <!-- Featured Project Row -->
             <div class="row align-items-center no-gutters mb-4 mb-lg-5">
                 <div class="col-xl-5 col-lg-5">
-                    <img class="img-fluid mb-3 mb-lg-0" src="/storage/pages/wWvvig7PEmeAFDh2hRpIjDXPoUJrAMlNAMle8Jo5.jpeg" alt="">
+                    <img class="img-fluid mb-3 mb-lg-0" src="{!!  $page->image == '' ? Voyager::image(setting('site.default')) : Voyager::image($page->image ) !!}" alt="">
                 </div>
                 <div class="col-xl-7 col-lg-7">
                     <div class="featured-text text-center text-lg-left">
@@ -23,7 +23,7 @@
                 <div class="col-xl-12 col-lg-12">
                     <br>
                     <br>
-                    <p class="text-black-50 text-center">
+                    <p class="text-black-50">
                         Bij ons staat de jongere centraal, want iedereen is uniek en verdient daarom ook een unieke aanpak.
                         Dit doen we door een begeleidingstraject te bieden waarbij de componenten:
                         Aandacht, Liefde, Praktiseren, Hervormen en Aansturing een basis zullen vormen.Hierover vertellen wij meer bij het kopje:Organisatie.
