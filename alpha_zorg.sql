@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.9
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Gegenereerd op: 01 mrt 2019 om 03:02
--- Serverversie: 5.7.21
--- PHP-versie: 5.6.35
+-- Gegenereerd op: 01 mrt 2019 om 22:17
+-- Serverversie: 5.7.19
+-- PHP-versie: 7.0.23
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -335,11 +335,11 @@ INSERT INTO `pages` (`id`, `author_id`, `title`, `excerpt`, `body`, `image`, `sl
 (2, 1, 'Organisatie', 'test', '<p><span style=\"box-sizing: border-box; font-weight: bold;\">Alpha Zorg &amp; Advies</span></p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"box-sizing: border-box; font-weight: bold;\">Visie:</span></p>\r\n<p>Wij willen&nbsp;jongeren helpen bij het ontdekken van hun ware identiteit waardoor zij weer het leven in perspectief&nbsp;kunnen zien<br style=\"box-sizing: border-box;\" />en vanuit&nbsp;hun&nbsp;kracht te gaan werken.</p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"box-sizing: border-box; font-weight: bold;\">Missie</span></p>\r\n<p>Het leven in perspectief zien.</p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"box-sizing: border-box; font-weight: bold;\">Hiervoor hanteren wij&nbsp;5 pijlers:</span></p>\r\n<ul>\r\n<li>Aandacht:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Geef aandacht aan jezelf, jouw passie&nbsp;en de wereld om&nbsp;je heen, hierdoor vergroot jouw zelfbeeld.</li>\r\n<li>Liefde:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Leer&nbsp;lief te hebben, door jezelf te&nbsp;accepteren zoals&nbsp;je bent.</li>\r\n<li>Praktijk:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Zet in praktijk dat wat&nbsp;je leert, hierdoor&nbsp;ontwikkelt&nbsp;je een nieuwe houding.</li>\r\n<li>Hervormen:&nbsp;&nbsp;&nbsp; Door&nbsp;je nieuwe&nbsp;denkwijze in praktijk&nbsp;te zetten, ga&nbsp;je jezelf&nbsp;anders opstellen, waardoor jouw&nbsp;levensstijl ook&nbsp;kunt gaan&nbsp;veranderen.</li>\r\n<li>Aansturing:&nbsp;&nbsp;&nbsp;&nbsp; Eenmaal&nbsp;als je&nbsp;nieuw&nbsp;inzicht verkregen hebt, zul&nbsp;je zelfredzaamheid ontwikkelen en&nbsp;nieuwe richting aan&nbsp;je leven geven.</li>\r\n</ul>', 'pages\\February2019\\3prl45erPApPi0zFj4WU.jpg', 'organisatie', 'test', 'test', 'ACTIVE', '2019-02-28 14:18:13', '2019-02-28 23:16:53'),
 (3, 1, 'Contact', 'test tetest', '<p>test&nbsp;</p>', NULL, 'contact', 'test', 'test', 'ACTIVE', '2019-02-28 16:26:47', '2019-02-28 16:26:47'),
 (4, 1, 'Voor wie?', 'test', '<p><span style=\"box-sizing: border-box; font-weight: bold;\">Onze doelgroep</span></p>\r\n<p>Wij bieden begeleiding en zorg aan iedereen vanaf 17 jaar die zelfstandig wil wonen en leven&nbsp;maar vanwege een beperking&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br style=\"box-sizing: border-box;\" />ondersteuning kan gebruiken. Om tot een succesvol traject te komen is het belangrijk dat de jongeren en volwassenen&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br style=\"box-sizing: border-box;\" />gemotiveerd zijn en geholpen willen worden!&nbsp;&nbsp;</p>', 'pages\\March2019\\MXA4cG8wwyJ9hnr9SlLG.png', 'voor-wie', 'test', 'test', 'ACTIVE', '2019-02-28 23:12:32', '2019-03-01 01:03:52'),
-(5, 1, 'Documenten', 'test', '<p>Algemene voorwaarden</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>Privacyreglement</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>Klachtenreglement</p>', NULL, 'documenten', 'test', 'test', 'ACTIVE', '2019-02-28 23:15:47', '2019-02-28 23:15:47'),
+(5, 1, 'Documenten', 'test', '<p>Algemene voorwaarden</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>Privacyreglement</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>Klachtenreglement</p>', NULL, 'documenten', 'alpha zorg documenten', 'test', 'ACTIVE', '2019-02-28 23:15:47', '2019-03-01 15:51:03'),
 (6, 1, 'Ambulante Begeleiding', 'test', '<p>Met ambulante begeleiding bieden wij begeleiding aan kinderen en volwassenen met gedrags-, ASS, ADHD, ADD, ODD, Pdd-Nos en/of andere licht psychiatrische problematiek. Samen met de client stellen wij een begeleidingsplan op waarin wij de zorgvraag zullen vastleggen,&nbsp;als ook de daarop toegespitste begeleiding en ondersteuning. Aan de hand van&nbsp;de afgesproken aanpak zullen wij de begeleidingstraject starten.</p>', NULL, 'ambulante-begeleiding', 'test', 'test', 'ACTIVE', '2019-02-28 23:23:21', '2019-02-28 23:24:39'),
 (7, 1, 'Woonbegeleiding', 'test', '<p>Wij bieden zorg en begeleiding aan mensen jongeren vanaf 17 jaar. Die geen 24 uur begeleiding meer nodig hebben bij het wonen.&nbsp;De jongere&nbsp;zelfstandig, maar heeft wel een&nbsp;hulpvraag waar hij of zij begeleiding bij nodig heeft. Binnen begeleid wonen hebben de mensen een eigen studio /appartement die&nbsp;zij in mogen richten naar eigen wens. Bij begeleid wonen krijg&nbsp;men een mentor, die de mensen&nbsp;helpt&nbsp;bij de hulpvraag.</p>', NULL, 'woonbegeleiding', 'test', 'test', 'ACTIVE', '2019-02-28 23:30:21', '2019-02-28 23:30:21'),
 (8, 1, 'Thuiszorg en Advies', 'test', '<p>Alpha Zorg biedt Thuiszorg bij u thuis. Als organisatie willen wij het verschil&nbsp;maken door u kwaliteit en aandacht te bieden.<br style=\"box-sizing: border-box;\" />U&nbsp;kunt denken&nbsp;verpleegkundige hulp bij&nbsp;ziekte of verzorging na een ziekenhuisopname. Ook ondersteunen wij u wanneer u moeite krijgt bij het uitvoeren van de dagelijkse huishoudelijke taken.</p>\r\n<p>In de zorg&nbsp;hebben we te maken met verschillende culturen, als organisatie zijn wij gespecialiseerd in het omgaan met de&nbsp;Caribische cultuur.<br style=\"box-sizing: border-box;\" />Wij&nbsp;adviseren organisaties en instellingen die in hun dagelijkse fungeren geconfronteerd worden met identiteitsgebonden problematieken.</p>', NULL, 'thuiszorg-en-advies', 'test', 'test', 'ACTIVE', '2019-02-28 23:31:34', '2019-02-28 23:31:34'),
-(9, 1, 'Aanmelden', 'Aanmelden kunt u zelf doen of door iemand aan ons worden doorverwezen. Na het eerste contact gaan we graag een kennismakingsgesprek met u aan, om na te gaan of onze werkwijze bij u past. Na het ontvangen van u informatie, kunnen wij na gaan of wij u passende zorg kunnen aanbieden. Zijn alle gegevens compleet, dan word je uitgenodigd voor een intake gesprek. Tijdens dit gesprek worden jouw hulpvraag, doelen en wensen besproken en kijken we hoe we jou het beste kunnen ondersteunen.', '<p>&nbsp;</p>\r\n<p><span style=\"box-sizing: border-box; font-weight: bold;\">Voor meer informatie en of vragen? Bel of mail ons dan voor het maken van een afspraak.</span></p>\r\n<p>Alpha Zorg &amp; Advies<br style=\"box-sizing: border-box;\" />Daalakkersweg 2-96<br style=\"box-sizing: border-box;\" />5641 JA Eindhoven</p>\r\n<p>T:+31(06) 48482449</p>\r\n<p>Of mail ons via&nbsp;<a style=\"box-sizing: border-box; background-color: transparent; color: #0fa2d5; text-decoration-line: none; transition: all 0.3s ease-in-out 0s;\" href=\"http://alpha-zorg.nl/contact\">http://alpha-zorg.nl/contact</a></p>', NULL, 'aanmelden', 'test', 'test', 'ACTIVE', '2019-02-28 23:32:28', '2019-02-28 23:34:12'),
+(9, 1, 'Aanmelden', 'Aanmelden kunt u zelf doen of door iemand aan ons worden doorverwezen. Na het eerste contact gaan we graag een kennismakingsgesprek met u aan, om na te gaan of onze werkwijze bij u past. Na het ontvangen van u informatie, kunnen wij na gaan of wij u passende zorg kunnen aanbieden. Zijn alle gegevens compleet, dan word je uitgenodigd voor een intake gesprek. Tijdens dit gesprek worden jouw hulpvraag, doelen en wensen besproken en kijken we hoe we jou het beste kunnen ondersteunen.', '<p>&nbsp;</p>\r\n<p><span style=\"box-sizing: border-box; font-weight: bold;\">Voor meer informatie en of vragen? Bel of mail ons dan voor het maken van een afspraak.</span></p>\r\n<p>Alpha Zorg &amp; Advies<br style=\"box-sizing: border-box;\" />Daalakkersweg 2-96<br style=\"box-sizing: border-box;\" />5641 JA Eindhoven</p>\r\n<p>T<span style=\"color: #000000;\">:+<strong>&nbsp;<a style=\"box-sizing: border-box; font-family: Nunito; font-size: 12.8px; letter-spacing: 1px; text-align: center; color: #000000;\" href=\"tel:+31 (0) 40-420 00 32\">31 (0) 40-420 00 32</a></strong></span></p>\r\n<p>Of mail ons via&nbsp;<a style=\"box-sizing: border-box; background-color: transparent; color: #0fa2d5; text-decoration-line: none; transition: all 0.3s ease-in-out 0s;\" href=\"http://alpha-zorg.nl/contact\">http://alpha-zorg.nl/contact</a></p>\r\n<p>&nbsp;</p>', NULL, 'aanmelden', 'test', 'test', 'ACTIVE', '2019-02-28 23:32:28', '2019-03-01 15:44:16'),
 (10, 1, 'Home', 'test', '<p>Alpha Zorg &amp; Advies biedt zorg en advies in de vorm van ambulante begeleiding en woonbegeleiding aan&nbsp;jongeren&nbsp;vanaf 17 jaar, die door&nbsp;gedrags- en/of ontwikkelingsstoornis&nbsp;ondersteuning nodig hebben in hun dagelijks leven. Wij bieden begeleiding in &eacute;&eacute;n van onze woningen of in eigen woonomgeving.<br style=\"box-sizing: border-box;\" />Hiernaast bieden wij ook ondersteuning aan ouders omtrent de zorg van hun kind,dit&nbsp;in het kader van de jeugdwet.</p>\r\n<p>Bij ons staat de&nbsp;jongere centraal, want iedereen&nbsp;is uniek en verdient daarom ook een unieke aanpak.<br style=\"box-sizing: border-box;\" />Dit doen we door een begeleidingstraject te bieden waarbij de&nbsp;componenten:<br style=\"box-sizing: border-box;\" />Aandacht, Liefde, Praktiseren, Hervormen en Aansturing&nbsp;een&nbsp;basis zullen vormen.Hierover vertellen wij meer bij het kopje:Organisatie.<br style=\"box-sizing: border-box;\" />Wij stemmen af op uw wensen en de mogelijkheden die wij te bieden hebben. Ieder mens is waardevol en verdient een oprechte en eerlijke kans om te groeien en zich verder te ontplooien.&nbsp;&nbsp;</p>\r\n<p>Als professional staan wij&nbsp;voor u klaar om u te adviseren, ondersteunen en begeleiden naar een leven&nbsp;met perspectief.</p>\r\n<p><span style=\"box-sizing: border-box; font-weight: bold;\">Samen staan wij sterk. Een helpende hand richting een betere morgen!</span></p>', NULL, '/', 'test', 'test', 'ACTIVE', '2019-03-01 01:10:01', '2019-03-01 01:10:50');
 
 -- --------------------------------------------------------
@@ -562,7 +562,7 @@ CREATE TABLE IF NOT EXISTS `settings` (
   `group` varchar(191) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `settings_key_unique` (`key`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `settings`
@@ -579,15 +579,16 @@ INSERT INTO `settings` (`id`, `key`, `display_name`, `value`, `details`, `type`,
 (8, 'admin.loader', 'Admin Loader', 'settings\\February2019\\dfjXM6MyRwK4IDIjHHZW.gif', '', 'image', 3, 'Admin'),
 (9, 'admin.icon_image', 'Admin Icon Image', '', '', 'image', 4, 'Admin'),
 (10, 'admin.google_analytics_client_id', 'Google Analytics Client ID (used for admin dashboard)', NULL, '', 'text', 1, 'Admin'),
-(12, 'site.banner', 'Site Banner', 'settings\\March2019\\fAcK4ev3xz9FEnDhJ0td.jpg', NULL, 'image', 6, 'Site'),
+(12, 'site.banner', 'Site Banner', 'settings\\March2019\\UmsOSwd2IaiM83xwNQ7J.jpg', NULL, 'image', 6, 'Site'),
 (13, 'site.privacy', 'Privacy Beleid', '', NULL, 'file', 7, 'Site'),
-(14, 'site.terms', 'Algemene Voorwaarden', '', NULL, 'file', 8, 'Site'),
-(16, 'site.adres', 'Site Adres', NULL, NULL, 'text', 9, 'Site'),
-(17, 'site.email', 'Site Email', NULL, NULL, 'text', 10, 'Site'),
-(18, 'site.telefoon', 'Site Telefoon', NULL, NULL, 'text', 11, 'Site'),
-(19, 'site.facebook', 'Site Facebook', NULL, NULL, 'text', 12, 'Site'),
+(14, 'site.terms', 'Algemene Voorwaarden', '[{\"download_link\":\"settings\\\\March2019\\\\9DVy9W3KCIXvSaUiGcWW.docx\",\"original_name\":\"3. Deskundigheidsverklaring 2.0.docx\"}]', NULL, 'file', 8, 'Site'),
+(16, 'site.adres', 'Site Adres', 'Daalakkersweg 2-96, 5641 JA Eindhoven', NULL, 'text', 9, 'Site'),
+(17, 'site.email', 'Site Email', 'info@alpha-zorg.nl', NULL, 'text', 10, 'Site'),
+(18, 'site.telefoon', 'Site Telefoon', '+31 (0) 40-420 00 32', NULL, 'text', 11, 'Site'),
+(19, 'site.facebook', 'Site Facebook', 'https://www.facebook.com/Alpha-Zorg-Advies-162925290766202/', NULL, 'text', 12, 'Site'),
 (20, 'site.twitter', 'Site Twitter', NULL, NULL, 'text', 13, 'Site'),
-(21, 'site.default.image', 'Site Standart Foto', 'settings\\March2019\\r6dJxUGSxGIm3YIA1lkD.jpg', NULL, 'image', 14, 'Site');
+(21, 'site.default.image', 'Site Standart Foto', 'settings\\March2019\\weyBnVb0nMk4IATtY5pU.jpg', NULL, 'image', 14, 'Site'),
+(22, 'site.home.ambulate', 'home ambulant', '', NULL, 'image', 15, 'Site');
 
 -- --------------------------------------------------------
 
@@ -673,7 +674,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `role_id`, `name`, `email`, `avatar`, `password`, `remember_token`, `settings`, `created_at`, `updated_at`) VALUES
-(1, 1, 'Admin', 'admin@admin.com', 'users\\February2019\\8gXmGaTYwMHa3EHozcuU.jpg', '$2y$10$vTgeOnWFUeDQ1/AH22Oahe.38E0V37HJF9/7l3c1yF2A778o4Vr6m', 'AOqAsOIQvPYGsQUM3OkxcXbSuH4iLTKlNPQOgxbbZ9y0Cxo9GrQFKb86z5wV', '{\"locale\":\"nl\"}', '2019-02-26 09:41:22', '2019-02-27 15:56:14');
+(1, 1, 'Admin', 'admin@admin.com', 'users\\February2019\\8gXmGaTYwMHa3EHozcuU.jpg', '$2y$10$vTgeOnWFUeDQ1/AH22Oahe.38E0V37HJF9/7l3c1yF2A778o4Vr6m', 'IcQsAgcsqKO2Ht4io3Sk6jVp5nsAW4E4HefjsArBU3kw0TMeHq6ZIcN8p6NR', '{\"locale\":\"nl\"}', '2019-02-26 09:41:22', '2019-02-27 15:56:14');
 
 -- --------------------------------------------------------
 

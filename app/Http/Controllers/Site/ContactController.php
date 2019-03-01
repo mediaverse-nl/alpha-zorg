@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Site;
 
+use App\Mail\ContactFormMail;
 use App\Page;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ContactStoreRequest;
+use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
 {
@@ -27,11 +29,11 @@ class ContactController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ContactStoreRequest $request)
     {
-//        ontvang data van form
-//        verwerk data van form
-//        verzend data naar email
+
+        Mail::to($request->email)
+            ->send(new ContactFormMail($request));
 
         return redirect()->back();
     }

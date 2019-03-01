@@ -22,7 +22,7 @@
                         <h4 class="text-uppercase m-0">Email</h4>
                         <hr class="my-4">
                         <div class="small text-black-50">
-                            <a href="#">{!! setting('site.email') !!}</a>
+                            <a href="mailto:{!! setting('site.email') !!}">{!! setting('site.email') !!}</a>
                         </div>
                     </div>
                 </div>
@@ -34,17 +34,17 @@
                         <i class="fas fa-mobile-alt text-primary mb-2"></i>
                         <h4 class="text-uppercase m-0">Telefoon</h4>
                         <hr class="my-4">
-                        <div class="small text-black-50">{!! setting('site.telefoon') !!}</div>
+                        <div class="small text-black-50"><a href="tel:{!! setting('site.telefoon') !!}">{!! setting('site.telefoon') !!}</a></div>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="social d-flex justify-content-center">
-            <a href="{!! setting('site.facebook') !!}" class="mx-2">
+            <a href="{!! setting('site.twiiter') !!}" class="mx-2">
                 <i class="fab fa-twitter"></i>
             </a>
-            <a href="{!! setting('site.twitter') !!}" class="mx-2">
+            <a href="{!! setting('site.facebook') !!}" class="mx-2">
                 <i class="fab fa-facebook-f"></i>
             </a>
         </div>

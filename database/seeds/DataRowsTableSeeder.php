@@ -45,11 +45,11 @@ class DataRowsTableSeeder extends Seeder
             ])->save();
         }
 
-        $dataRow = $this->dataRow($userDataType, 'email');
+        $dataRow = $this->dataRow($userDataType, 'emails');
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'text',
-                'display_name' => __('voyager::seeders.data_rows.email'),
+                'display_name' => __('voyager::seeders.data_rows.emails'),
                 'required'     => 1,
                 'browse'       => 1,
                 'read'         => 1,

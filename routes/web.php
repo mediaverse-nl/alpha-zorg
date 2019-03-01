@@ -17,6 +17,7 @@ Route::group(['prefix' => 'admin'], function () {
 Route::group(['namespace' => 'Site', 'as' => 'site.'], function () {
     Route::get('/', 'WelcomeController')->name('home');
     Route::get('/contact', 'ContactController@index')->name('contact.index');
+    Route::post('/contact', 'ContactController@store')->name('contact.store');
 
     Route::get('/{slug}', 'PageController@show')->name('page.show');
 
