@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.7.9
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Gegenereerd op: 01 mrt 2019 om 22:17
--- Serverversie: 5.7.19
--- PHP-versie: 7.0.23
+-- Gegenereerd op: 04 mrt 2019 om 14:17
+-- Serverversie: 5.7.21
+-- PHP-versie: 5.6.35
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -241,8 +241,6 @@ INSERT INTO `menu_items` (`id`, `menu_id`, `title`, `url`, `target`, `icon_class
 (8, 1, 'Compass', '', '_self', 'voyager-compass', NULL, 5, 12, '2019-02-26 09:41:20', '2019-02-26 09:41:20', 'voyager.compass.index', NULL),
 (9, 1, 'BREAD', '', '_self', 'voyager-bread', NULL, 5, 13, '2019-02-26 09:41:20', '2019-02-26 09:41:20', 'voyager.bread.index', NULL),
 (10, 1, 'Settings', '', '_self', 'voyager-settings', NULL, NULL, 14, '2019-02-26 09:41:20', '2019-02-26 09:41:20', 'voyager.settings.index', NULL),
-(11, 1, 'Categories', '', '_self', 'voyager-categories', NULL, NULL, 8, '2019-02-26 09:41:21', '2019-02-26 09:41:21', 'voyager.categories.index', NULL),
-(12, 1, 'Posts', '', '_self', 'voyager-news', NULL, NULL, 6, '2019-02-26 09:41:22', '2019-02-26 09:41:22', 'voyager.posts.index', NULL),
 (13, 1, 'Pages', '', '_self', 'voyager-file-text', NULL, NULL, 7, '2019-02-26 09:41:22', '2019-02-26 09:41:22', 'voyager.pages.index', NULL),
 (14, 1, 'Hooks', '', '_self', 'voyager-hook', NULL, 5, 13, '2019-02-26 09:41:22', '2019-02-26 09:41:22', 'voyager.hooks', NULL),
 (15, 2, 'Contact', 'contact', '_self', NULL, '#000000', NULL, 4, '2019-02-26 10:16:05', '2019-02-28 16:24:22', NULL, ''),
@@ -441,46 +439,63 @@ CREATE TABLE IF NOT EXISTS `permission_role` (
 
 INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (1, 1),
-(2, 1),
-(3, 1),
+(1, 3),
+(2, 3),
+(3, 3),
 (4, 1),
-(5, 1),
+(4, 3),
+(5, 3),
 (6, 1),
+(6, 3),
 (7, 1),
+(7, 3),
 (8, 1),
+(8, 3),
 (9, 1),
+(9, 3),
 (10, 1),
-(11, 1),
-(12, 1),
-(13, 1),
-(14, 1),
-(15, 1),
-(16, 1),
-(17, 1),
-(18, 1),
-(19, 1),
-(20, 1),
+(10, 3),
+(11, 3),
+(12, 3),
+(13, 3),
+(14, 3),
+(15, 3),
+(16, 3),
+(17, 3),
+(18, 3),
+(19, 3),
+(20, 3),
 (21, 1),
+(21, 3),
 (22, 1),
+(22, 3),
 (23, 1),
+(23, 3),
 (24, 1),
+(24, 3),
 (25, 1),
-(26, 1),
-(27, 1),
-(28, 1),
-(29, 1),
-(30, 1),
-(31, 1),
-(32, 1),
-(33, 1),
-(34, 1),
-(35, 1),
+(25, 3),
+(26, 3),
+(27, 3),
+(28, 3),
+(29, 3),
+(30, 3),
+(31, 3),
+(32, 3),
+(33, 3),
+(34, 3),
+(35, 3),
 (36, 1),
+(36, 3),
 (37, 1),
+(37, 3),
 (38, 1),
+(38, 3),
 (39, 1),
+(39, 3),
 (40, 1),
-(41, 1);
+(40, 3),
+(41, 3);
 
 -- --------------------------------------------------------
 
@@ -534,7 +549,7 @@ CREATE TABLE IF NOT EXISTS `roles` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `roles_name_unique` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `roles`
@@ -542,7 +557,8 @@ CREATE TABLE IF NOT EXISTS `roles` (
 
 INSERT INTO `roles` (`id`, `name`, `display_name`, `created_at`, `updated_at`) VALUES
 (1, 'admin', 'Administrator', '2019-02-26 09:41:20', '2019-02-26 09:41:20'),
-(2, 'user', 'Normal User', '2019-02-26 09:41:20', '2019-02-26 09:41:20');
+(2, 'user', 'Normal User', '2019-02-26 09:41:20', '2019-02-26 09:41:20'),
+(3, 'super admin', 'Super Admin', '2019-03-03 16:21:21', '2019-03-03 16:21:36');
 
 -- --------------------------------------------------------
 
@@ -562,7 +578,7 @@ CREATE TABLE IF NOT EXISTS `settings` (
   `group` varchar(191) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `settings_key_unique` (`key`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `settings`
@@ -588,7 +604,12 @@ INSERT INTO `settings` (`id`, `key`, `display_name`, `value`, `details`, `type`,
 (19, 'site.facebook', 'Site Facebook', 'https://www.facebook.com/Alpha-Zorg-Advies-162925290766202/', NULL, 'text', 12, 'Site'),
 (20, 'site.twitter', 'Site Twitter', NULL, NULL, 'text', 13, 'Site'),
 (21, 'site.default.image', 'Site Standart Foto', 'settings\\March2019\\weyBnVb0nMk4IATtY5pU.jpg', NULL, 'image', 14, 'Site'),
-(22, 'site.home.ambulate', 'home ambulant', '', NULL, 'image', 15, 'Site');
+(23, 'home.woonbegeleiding', 'Woonbegeleiding', NULL, NULL, 'text', 18, 'Home'),
+(25, 'home.thuiszorg', 'Thuiszorg', NULL, NULL, 'text', 16, 'Home'),
+(28, 'home.thuiszorg-img', 'Thuiszorg Foto', '', NULL, 'image', 17, 'Home'),
+(29, 'home.woonbegeleiding-img', 'Woonbegeleiding Foto', '', NULL, 'image', 19, 'Home'),
+(31, 'home.ambulant-img', 'Ambulant Foto', '', NULL, 'image', 22, 'Home'),
+(32, 'home.ambulant', 'Ambulant', '', NULL, 'text', 21, 'Home');
 
 -- --------------------------------------------------------
 
@@ -667,14 +688,14 @@ CREATE TABLE IF NOT EXISTS `users` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`),
   KEY `users_role_id_foreign` (`role_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `users`
 --
 
 INSERT INTO `users` (`id`, `role_id`, `name`, `email`, `avatar`, `password`, `remember_token`, `settings`, `created_at`, `updated_at`) VALUES
-(1, 1, 'Admin', 'admin@admin.com', 'users\\February2019\\8gXmGaTYwMHa3EHozcuU.jpg', '$2y$10$vTgeOnWFUeDQ1/AH22Oahe.38E0V37HJF9/7l3c1yF2A778o4Vr6m', 'IcQsAgcsqKO2Ht4io3Sk6jVp5nsAW4E4HefjsArBU3kw0TMeHq6ZIcN8p6NR', '{\"locale\":\"nl\"}', '2019-02-26 09:41:22', '2019-02-27 15:56:14');
+(1, 3, 'Admin', 'admin@admin.com', 'users\\February2019\\8gXmGaTYwMHa3EHozcuU.jpg', '$2y$10$vTgeOnWFUeDQ1/AH22Oahe.38E0V37HJF9/7l3c1yF2A778o4Vr6m', 'SLreQuNbZEJzMEHcjMznDGcJ6yAz9uIiarn9Bj6FanVr2IdC7xj3AxSszcO0', '{\"locale\":\"nl\"}', '2019-02-26 09:41:22', '2019-03-03 16:30:06');
 
 -- --------------------------------------------------------
 
